@@ -43,9 +43,9 @@ export const VersionFooter = ({
       transition={{ type: 'spring', stiffness: 140, damping: 20 }}
     >
       <div>
-        <div>You are viewing a previous version</div>
+        <div>以前のバージョンを表示しています。</div>
         <div className="text-muted-foreground text-sm">
-          Restore this version to make edits
+          編集するにはこのバージョンを復元してください
         </div>
       </div>
 
@@ -86,7 +86,7 @@ export const VersionFooter = ({
             );
           }}
         >
-          <div>Restore this version</div>
+          <div>このバージョンを復元する</div>
           {isMutating && (
             <div className="animate-spin">
               <LoaderIcon />
@@ -99,7 +99,7 @@ export const VersionFooter = ({
             handleVersionChange('latest');
           }}
         >
-          Back to latest version
+          最新バージョンに戻る
         </Button>
       </div>
     </motion.div>

@@ -102,7 +102,7 @@ export const textArtifact = new Artifact<'text', TextArtifactMetadata>({
   actions: [
     {
       icon: <ClockRewind size={18} />,
-      description: 'View changes',
+      description: '変更履歴を見る',
       onClick: ({ handleVersionChange }) => {
         handleVersionChange('toggle');
       },
@@ -116,7 +116,7 @@ export const textArtifact = new Artifact<'text', TextArtifactMetadata>({
     },
     {
       icon: <UndoIcon size={18} />,
-      description: 'View Previous version',
+      description: '前のバージョンを見る',
       onClick: ({ handleVersionChange }) => {
         handleVersionChange('prev');
       },
@@ -130,7 +130,7 @@ export const textArtifact = new Artifact<'text', TextArtifactMetadata>({
     },
     {
       icon: <RedoIcon size={18} />,
-      description: 'View Next version',
+      description: '次のバージョンを見る',
       onClick: ({ handleVersionChange }) => {
         handleVersionChange('next');
       },
@@ -144,33 +144,33 @@ export const textArtifact = new Artifact<'text', TextArtifactMetadata>({
     },
     {
       icon: <CopyIcon size={18} />,
-      description: 'Copy to clipboard',
+      description: 'クリップボードにコピーする',
       onClick: ({ content }) => {
         navigator.clipboard.writeText(content);
-        toast.success('Copied to clipboard!');
+        toast.success('クリップボードにコピーされました！');
       },
     },
   ],
   toolbar: [
     {
       icon: <PenIcon />,
-      description: 'Add final polish',
+      description: '最終仕上げをする',
       onClick: ({ appendMessage }) => {
         appendMessage({
           role: 'user',
           content:
-            'Please add final polish and check for grammar, add section titles for better structure, and ensure everything reads smoothly.',
+            '終的な仕上げと文法のチェック、構造を良くするためのセクションタイトルの追加、すべてがスムーズに読めるようにしてください。',
         });
       },
     },
     {
       icon: <MessageIcon />,
-      description: 'Request suggestions',
+      description: 'AIにさらなる提案を求める',
       onClick: ({ appendMessage }) => {
         appendMessage({
           role: 'user',
           content:
-            'Please add suggestions you have that could improve the writing.',
+            '文章を改善できるような提案があれば追加してください。',
         });
       },
     },

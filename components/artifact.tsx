@@ -1,5 +1,6 @@
 import type { Attachment, UIMessage } from 'ai';
-import { formatDistance } from 'date-fns';
+import { formatDistanceToNow} from 'date-fns';
+import { ja } from 'date-fns/locale'; 
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   type Dispatch,
@@ -417,17 +418,18 @@ function PureArtifact({
 
                   {isContentDirty ? (
                     <div className="text-sm text-muted-foreground">
-                      Saving changes...
+                      変更を保存中...
                     </div>
                   ) : document ? (
                     <div className="text-sm text-muted-foreground">
-                      {`Updated ${formatDistance(
+                      {`
+                      ${formatDistanceToNow(
                         new Date(document.createdAt),
-                        new Date(),
                         {
+                          locale:ja, 
                           addSuffix: true,
                         },
-                      )}`}
+                      )}に更新`}
                     </div>
                   ) : (
                     <div className="w-32 h-3 mt-2 bg-muted-foreground/20 rounded-md animate-pulse" />

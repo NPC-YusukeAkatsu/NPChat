@@ -210,7 +210,7 @@ export const codeArtifact = new Artifact<'code', Metadata>({
     },
     {
       icon: <UndoIcon size={18} />,
-      description: 'View Previous version',
+      description: '前のバージョンを見る',
       onClick: ({ handleVersionChange }) => {
         handleVersionChange('prev');
       },
@@ -224,7 +224,7 @@ export const codeArtifact = new Artifact<'code', Metadata>({
     },
     {
       icon: <RedoIcon size={18} />,
-      description: 'View Next version',
+      description: '次のバージョンを見る',
       onClick: ({ handleVersionChange }) => {
         handleVersionChange('next');
       },
@@ -241,7 +241,7 @@ export const codeArtifact = new Artifact<'code', Metadata>({
       description: 'Copy code to clipboard',
       onClick: ({ content }) => {
         navigator.clipboard.writeText(content);
-        toast.success('Copied to clipboard!');
+        toast.success('クリップボードにコピーされました！');
       },
     },
   ],

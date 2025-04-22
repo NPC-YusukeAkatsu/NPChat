@@ -49,21 +49,22 @@ export function PureMessageActions({
                   .trim();
 
                 if (!textFromParts) {
-                  toast.error("There's no text to copy!");
+                  toast.error("コピーするテキストが存在しません！");
                   return;
                 }
 
                 await copyToClipboard(textFromParts);
-                toast.success('Copied to clipboard!');
+                toast.success('クリップボードにコピーされました！');
               }}
             >
               <CopyIcon />
             </Button>
           </TooltipTrigger>
-          <TooltipContent>Copy</TooltipContent>
+          <TooltipContent>コピー</TooltipContent>
         </Tooltip>
 
-        <Tooltip>
+        {/* 高評価ボタン */}
+        {/* <Tooltip>
           <TooltipTrigger asChild>
             <Button
               data-testid="message-upvote"
@@ -81,7 +82,7 @@ export function PureMessageActions({
                 });
 
                 toast.promise(upvote, {
-                  loading: 'Upvoting Response...',
+                  loading: '高評価中...',
                   success: () => {
                     mutate<Array<Vote>>(
                       `/api/vote?chatId=${chatId}`,
@@ -104,19 +105,20 @@ export function PureMessageActions({
                       { revalidate: false },
                     );
 
-                    return 'Upvoted Response!';
+                    return '高評価しました!';
                   },
-                  error: 'Failed to upvote response.',
+                  error: '高評価に失敗しました',
                 });
               }}
             >
               <ThumbUpIcon />
             </Button>
           </TooltipTrigger>
-          <TooltipContent>Upvote Response</TooltipContent>
-        </Tooltip>
+          <TooltipContent>高評価</TooltipContent>
+        </Tooltip> */}
 
-        <Tooltip>
+        {/* 低評価ボタン */}
+        {/* <Tooltip>
           <TooltipTrigger asChild>
             <Button
               data-testid="message-downvote"
@@ -134,7 +136,7 @@ export function PureMessageActions({
                 });
 
                 toast.promise(downvote, {
-                  loading: 'Downvoting Response...',
+                  loading: '低評価中...',
                   success: () => {
                     mutate<Array<Vote>>(
                       `/api/vote?chatId=${chatId}`,
@@ -157,17 +159,17 @@ export function PureMessageActions({
                       { revalidate: false },
                     );
 
-                    return 'Downvoted Response!';
+                    return '低評価しました';
                   },
-                  error: 'Failed to downvote response.',
+                  error: '低評価に失敗しました',
                 });
               }}
             >
               <ThumbDownIcon />
             </Button>
           </TooltipTrigger>
-          <TooltipContent>Downvote Response</TooltipContent>
-        </Tooltip>
+          <TooltipContent>低評価</TooltipContent>
+        </Tooltip> */}
       </div>
     </TooltipProvider>
   );

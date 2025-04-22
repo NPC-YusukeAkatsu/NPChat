@@ -10,6 +10,7 @@ interface SuggestedActionsProps {
   append: UseChatHelpers['append'];
 }
 
+// いいサジェスト案があれば
 function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   const suggestedActions = [
     {

@@ -159,6 +159,7 @@ export async function POST(request: Request) {
       },
     });
   } catch (error) {
+    console.error(error)
     return new Response('An error occurred while processing your request!', {
       status: 404,
     });
